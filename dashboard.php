@@ -2,18 +2,22 @@
     include("database.php");
 ?>
 <?php 
-    // Select all tables
-    $users_sql = "SELECT * FROM utilisateurs";
-    $users_result = mysqli_query($connect, $users_sql);
-
-    $projects_sql = "SELECT * FROM projects";
-    $projects_result = mysqli_query($connect, $projects_sql);
-
-    $freelances_sql = "SELECT * FROM freelances";
-    $freelances_result = mysqli_query($connect, $freelances_sql);
-
-    $offres_sql = "SELECT * FROM offres";
-    $offres_result = mysqli_query($connect, $offres_sql);
+    try {
+        // Select all tables
+        $users_sql = "SELECT * FROM utilisateurs";
+        $users_result = mysqli_query($connect, $users_sql);
+    
+        $projects_sql = "SELECT * FROM projects";
+        $projects_result = mysqli_query($connect, $projects_sql);
+    
+        $freelances_sql = "SELECT * FROM freelances";
+        $freelances_result = mysqli_query($connect, $freelances_sql);
+    
+        $offres_sql = "SELECT * FROM offres";
+        $offres_result = mysqli_query($connect, $offres_sql);
+    }catch(mysqli_sql_exception){
+        echo " Failed to load data";
+    }
 
     
 ?>

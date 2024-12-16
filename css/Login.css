@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Sans-serif;
+}
+body {
+    background-color: #e4e9f7;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+   
+}
+.box {
+    background-color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                32px 64px -48px rgba(0,0,0,0.5);
+}
+.form-box {
+    width: 450px;
+    margin: 0px 10px;
+}
+.form-box header{
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+.form-box form .field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.form-box form .input input {
+    height: 30px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: rgba(76,68,182,0.8);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 5px 30px;
+    color: #fff;  
+}
+.message {
+    border: 1px solid red;
+    color: red;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0px;
+    margin-bottom: 5px;
+}
