@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    width: 100%;
+    padding: 5px 50px;
+}
+.home_page{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    height: fit-content;
+}
+.data_info{
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.data_info p{
+    margin-left: 10px;
+}
+.users{
+    background-color: red;
+}
+.projects{
+    background-color: blue;
+}
+.freelances{
+    background-color:  green;
+}
+.offres{
+    background-color: yellow;
+}
+/* media queries */
+@media (max-width: 425px){
+    .home_page{
+        grid-template-columns: 1fr;
+    }
+}
+
