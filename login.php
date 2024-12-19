@@ -41,7 +41,7 @@
                             $_SESSION["user_role"] = $user["user_role"];
                             $_SESSION["user_email"] = $user["email"];
                             $_SESSION["loggedin"] = true;
-                            header("Location: home.php");
+                            header("Location: admin.php");
                             exit;
                        }
                        else{
