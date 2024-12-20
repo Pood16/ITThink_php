@@ -150,25 +150,37 @@
 
             <!-- Categories Section -->
             <section id="categories" class="mb-8 hidden">
+            <?php 
+                $sql_cat = "SELECT * FROM categories";
+                $cat_result = $connect -> query($sql_cat);
+              
+                if ($cat_result->num_rows > 0) {
+                    $rows = $cat_result->fetch_all(MYSQLI_ASSOC);?>
+                                         
                 <h2 class="text-2xl font-bold mb-4">Gestion des Catégories</h2>
                 <div class="bg-white rounded-lg shadow p-6">
                     <div class="mb-4 inline-block">
                         <a href="addCategorie.php" id="add_cat" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Nouvelle Catégorie</a>
                     </div>
                     <div class="mb-4 inline-block">
-                        <a id="add_sub_cat" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Nouvelle Sous Catégorie</a>
+                        <a href="addSubCat.php" id="add_sub_cat" class="cursor-pointer bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Nouvelle Sous Catégorie</a>
                     </div>
                     <div class="grid grid-cols-4 gap-4">
+                        <?php foreach($rows as $row){?>
                         <div class="border p-4 rounded-lg">
-                            <h3 class="font-bold">Design UI/UX</h3>
-                            <div class="mt-4 space-x-2">
-                                <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Modifier</button>
-                                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Supprimer</button>
+                                <h3 class="font-bold"><?=$row["nom_categorie"]?></h3>
+                                <div class="mt-4 space-x-2">
+                                    <a href="update_cat.php?id=<?=$row['id_categorie']?>" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Modifier</a>
+                                    <a href="delete_cat.php?id=<?=$row['id_categorie']?>" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Supprimer</a>
+                                </div>
                             </div>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div>
+                <?php }else echo "no data";
+            ?> 
             </section>
+            
 
             <!-- Testimonials Section -->
             <section id="testimonials" class="mb-8 hidden">

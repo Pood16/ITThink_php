@@ -31,7 +31,7 @@
                     }
                 }
             ?>
-            <form action="admin.php" method="POST" class="space-y-4">
+            <form action="addCategorie.php" method="POST" class="space-y-4">
                 <div>
                     <label for="nom_categorie" class="block text-sm font-medium text-gray-700">nom de categorie: </label>
                     <input type="text" id="nom_categorie" name="nom_categorie" class="mt-1 block w-full rounded-md border-gray-300 shadow focus:border-blue-500">
@@ -40,9 +40,9 @@
                 <button type="submit" class="inline-block bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none  focus:ring-blue-500">
                     Ajouter
                 </button>
-                <button id="close-add-cat-btn" type="button" class="inline-block bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none  focus:ring-blue-500">
-                    Cancel
-                </button>
+                <a id="close-add-cat-btn" href="admin.php" class="inline-block bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none  focus:ring-blue-500">
+                    Home
+            </a>
             </form>
         </div>
     </div>
