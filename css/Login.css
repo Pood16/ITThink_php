@@ -41,7 +41,7 @@ body {
     flex-direction: column;
     margin-bottom: 10px;
 }
-.form-box form .input input {
+.form-box form .input input:not(textarea) {
     height: 30px;
     width: 100%;
     font-size: 16px;
@@ -50,6 +50,7 @@ body {
     border: 1px solid #ccc;
     outline: none;
 }
+
 
 .btn {
     cursor: pointer;
@@ -70,3 +71,4 @@ body {
     padding: 5px 0px;
     margin-bottom: 5px;
 }
+

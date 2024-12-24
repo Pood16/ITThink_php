@@ -2,7 +2,7 @@
 CREATE DATABASE ITThink;
 USE ITThink;
 -- Creation des tables 
--- table d'utilisateurs
+# table d'utilisateurs
 CREATE TABLE utilisateurs(
 	id_utilisateur INT PRIMARY KEY AUTO_INCREMENT,
     nom_utilisateur VARCHAR(50) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE categories(
 	id_categorie INT PRIMARY KEY AUTO_INCREMENT,
     nom_categorie VARCHAR(50) NOT NULL
 );
--- table sous_categories
+#table sous_categories
 CREATE TABLE sousCategories(
 	id_sous_categorie INT PRIMARY KEY AUTO_INCREMENT,
     nom_sous_categorie VARCHAR(50) NOT NULL,
@@ -54,16 +54,26 @@ CREATE TABLE offres(
     id_project INT,
     FOREIGN KEY (id_project) REFERENCES projects(id_project)
 );
--- temoignage table
+#temoignage table
 CREATE TABLE temoignage(
 	id_temoignage INT AUTO_INCREMENT PRIMARY KEY,
     commentaire VARCHAR(400) NOT NULL,
     id_utilisateur INT,
     FOREIGN KEY (id_utilisateur) REFERENCES utilisateurs(id_utilisateur)
 );
--- ajouter un colonne dans un tableau
+#ajouter un colonne dans un tableau
 ALTER TABLE projects
-ADD date_creation DATETIME;
+AUTO_INCREMENT = 1;
+use ITThink;
+ALTER TABLE projects
+MODIFY date_creation DATE;
+select * from utilisateurs;
+select * from categories;
+select * from sousCategories;
+select * from projects;
+ALTER TABLE categories auto_increment = 1;
+alter table sousCategories auto_increment = 1;
+
 # ADD content to tables
 -- utilisateurs table
 INSERT INTO utilisateurs (nom_utilisateur, mot_de_passe, email, phone)
@@ -74,11 +84,11 @@ INSERT INTO categories(nom_categorie)
 VALUES ("WEB DEVELOPMENT"),("DESIGN");
 -- sous-categories
 INSERT INTO sousCategories(nom_sous_categorie, id_categorie)
-VALUES ("sous categorie 1", 2),
-	   ("sous categorie 2", 1);
+VALUES ("Fron End", 2),
+	   ("Back end", 1);
 -- projects table
 INSERT INTO projects(titre_projet, description_projet, id_categorie, id_sous_categorie, id_utilisateur, date_creation)
-VALUES ("Portfolio", "simple portfolio to show my work and projects", 2,1, 2, "2024-12-29 15:22:10");
+VALUES ("Calculator", "Simple calculator that allows users to do simple math operations and bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla", 1,2, 5, "2024-12-8");
 -- freelances table
 INSERT INTO freelances (nom_freelance, competences, id_utilisateur)
 VALUES ("Pood", "javascript css html5", 2);
@@ -110,6 +120,9 @@ SELECT * FROM categories;
 SELECT * FROM sousCategories;
 SELECT * FROM freelances;
 SELECT * FROM offres;
+use itthink;
 SELECT * FROM projects;
 SELECT * FROM temoignage;
+SET SQL_SAFE_UPDATES = 0;
+delete from freelances;
 
